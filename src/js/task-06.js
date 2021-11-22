@@ -1,6 +1,6 @@
 const input = document.getElementById("validation-input");
 const DATALENGTH = input.getAttribute("data-length");
-input.addEventListener('input', inputValidationCheck);
+input.addEventListener('blur', inputValidationCheck);
 
 function inputValidationCheck() {
     
