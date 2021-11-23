@@ -7,11 +7,16 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsMarkup = document.getElementById('ingredients');
+const ulMarkup = document.querySelector('#ingredients');
 
-ingredients.map(el => {
-  const listEl = document.createElement('li');
-  listEl.classList.add('item');
-  listEl.textContent = `${el}`;
-  ingredientsMarkup.appendChild(listEl);
-});
+  function makeLiItems () {
+    return ingredients.map(el => {
+        const listEl = document.createElement('li');
+        listEl.classList.add('item');
+        listEl.textContent = `${el}`;
+        return listEl;
+    })
+  };
+
+const itemsList = makeLiItems(ingredients);
+ulMarkup.append(...itemsList);
